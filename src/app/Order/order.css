@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+.order-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.container .content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+      pointer-events: none; /* optional but pro */
+}
+
+.container .content h1 {
+    font-family: 'ICA Rubrik';
+    font-size: 10em;
+    line-height: 1em;
+    color: #c8cef7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+/* IMAGE ITSELF */
+.image-wrapper img {
+    height: 100%;
+    width: auto;
+}
+
+.glass {
+    position: absolute;
+    z-index: 2;
+}
+
+.container .glass {
+    position: relative;
+    width: 400px;
+    height: 240px;
+
+    display: flex;              /* 🔑 */
+    align-items: center;        /* vertically center */
+    gap: 12px;   
+    background: linear-gradient(#b5b5b5, transparent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 25px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.glass img {
+    width: 200px;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0; /* prevents image from shrinking */
+}
+.glass h1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.glass p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+
+.card-1 { top: 6%; left: 2%; }
+.card-2 { top: 45%; left: 4%; }
+.card-4 { bottom: 8%; left: 68%; }
+.card-5 { top: 10%; left: 72%; }
+
+
+/* Change .body to .hero-section to avoid conflict with HTML body tag */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    overflow: hidden; /* Keeps cards inside */
+}
+
+/* --- Container --- */
+/* --- Container --- */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 80px 20px;
+    background-color: #f5f5f5;
+    margin-top: 120px;
+    flex-wrap: wrap;
+}
+
+/* --- Left side (text + image) --- */
+.form-container .flow {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-container .flow h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    color: #111;
+}
+
+.form-container .flow p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.form-container .flow img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* --- Form --- */
+.form-container form {
+    display: grid;
+    gap: 20px;
+    width: 350px;
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Form Groups --- */
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-container label {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+    background: #f0f0f0;
+    color: #111;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
+}
+
+/* --- Checkbox --- */
+.form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.form-container .fine-print {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.form-container .fine-print a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.form-container .fine-print a:hover {
+    text-decoration: underline;
+}
+
+/* --- Button --- */
+.form-container button {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container form,
+    .form-container .flow {
+        width: 90%;
+    }
+}
+

@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Modern Sofa",
+        "price": 499.99,
+        "image": "/image/interior.jpg",
+        "description": "A sleek modern sofa with clean lines and comfortable cushions."
+    },
+    {
+        "id": 2,
+        "name": "Classic Sofa",
+        "price": 699.99,
+        "image": "/image/interior2.jpg",
+        "description": "A timeless classic sofa with elegant design and plush seating."
+    },
+    {
+        "id": 3,
+        "name": "Sectional Sofa",
+        "price": 899.99,
+        "image": "/image/sofa3.jpg",
+        "description": "A spacious sectional sofa perfect for large living rooms and gatherings."
+    },
+    {
+        "id": 4,
+        "name": "Recliner Sofa",
+        "price": 799.99,
+        "image": "/image/sofa4.jpg",
+        "description": "A comfortable recliner sofa with adjustable seating for ultimate relaxation."
+    },
+    {
+        "id": 5,
+        "name": "Sleeper Sofa",
+        "price": 599.99,
+        "image": "/image/sofa5.jpg",
+        "description": "A versatile sleeper sofa that easily converts into a bed for guests."
+    },
+    {
+        "id": 6,
+        "name": "Loveseat Sofa",
+        "price": 399.99,
+        "image": "/image/sofa6.jpg",
+        "description": "A cozy loveseat sofa perfect for small spaces and intimate settings."
+    },
+    {
+        "id": 7,
+        "name": "Chesterfield Sofa",
+        "price": 999.99,
+        "image": "/image/sofa7.jpg",
+        "description": "A luxurious Chesterfield sofa with deep button tufting and rolled arms."
+    },
+    {
+        "id": 8,
+        "name": "Mid-Century Modern Sofa",
+        "price": 549.99,
+        "image": "/image/sofa8.jpg",
+        "description": "A stylish mid-century modern sofa with tapered legs and vibrant upholstery."
+    },
+    {
+        "id": 9,
+        "name": "Convertible Sofa",
+        "price": 649.99,
+        "image": "/image/sofa9.jpg",
+        "description": "A functional convertible sofa that can be adjusted for different seating arrangements."
+    },
+    {
+        "id": 10,
+        "name": "Outdoor Sofa",
+        "price": 749.99,
+        "image": "/image/sofa10.jpg",
+        "description": "A durable outdoor sofa designed to withstand the elements while providing comfort."
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "image": "/images/comfort.jpg",
+        "title": "Comfort Redefined",
+        "desc": "Experience unparalleled comfort with our ergonomically designed sofas that adapt to your body.",
+        "Price": "$499"
+
+    },
+    {
+        "id": 2,
+        "image": "/images/design.jpg",
+        "title": "Stylish Designs",
+        "desc": "Choose from a variety of modern and classic designs that complement any living space.",
+        
+        "Price": "$599"
+    },
+    {
+        "id": 3,
+        "image": "/images/durability.jpg",
+        "title": "Durable Materials",
+        "desc": "Crafted with high-quality materials to ensure longevity and durability for everyday use.",
+        "Price": "$699"
+    },
+    {
+        "id": 4,
+        "image": "/images/customizable.jpg",
+        "title": "Customizable Options",
+        "desc": "Personalize your sofa with a range of fabrics, colors, and configurations to suit your style.",
+        "Price": "$799"
+    },
+    {
+        "id": 5,
+        "image": "/images/affordable.jpg",
+        "title": "Affordable Luxury",
+        "desc": "Get the best value for your money with our competitively priced sofas without compromising on quality.",
+        "Price": "$899"
+    },
+    {
+        "id": 6,
+        "image": "/images/eco-friendly.jpg",
+        "title": "Eco-Friendly Choices",
+        "desc": "Make a sustainable choice with our eco-friendly sofas made from recycled and renewable materials.",
+        "Price": "$999"
+    },
+    {
+        "id": 7,
+        "image": "/images/maintenance.jpg",
+        "title": "Easy Maintenance",
+        "desc": "Enjoy hassle-free maintenance with our stain-resistant and easy-to-clean sofa fabrics.",
+        "Price": "$1099"
+    },
+    {
+        "id": 8,
+        "image": "/images/spacious.jpg",
+        "title": "Spacious Seating",
+        "desc": "Accommodate family and friends comfortably with our spacious sectional sofas.",
+        "Price": "$1199"
+    },
+    {
+        "id": 9,
+        "image": "/images/innovative.jpg",
+        "title": "Innovative Features",
+        "desc": "Discover sofas with built-in features like storage compartments and reclining options for added convenience.",
+        "Price": "$1299"
+    },
+    {
+        "id": 10,
+        "image": "/images/shipping.jpg",
+        "title": "Worldwide Shipping",
+        "desc": "Enjoy our sofas delivered to your doorstep no matter where you are in the world.",
+        "Price": "$1399"
+    }
+]
