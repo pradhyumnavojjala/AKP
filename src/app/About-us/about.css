@@ -1,86 +1,254 @@
-/* ========== GLOBAL ========== */
-.about-title {
+/* ========== HERO SECTION ========== */
+.hero-section {
+  position: relative;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.hero-title {
+  position: relative;
+  color: #fff;
   font-family: bricolage;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: 5rem;
+  font-weight: bold;
+  z-index: 10;
+  text-align: center;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+  background-color: #fff;
+  padding: 4rem 8%;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.about-left {
+  flex: 2;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-heading {
+  font-family: bricolage;
+  font-size: 4rem;
   font-weight: bold;
   color: #1f2937;
 }
 
-.about-text {
-  font-family: bricolage;
-  font-size: 1.1rem;
-  line-height: 1.8;
+.about-right h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.about-right p {
+  font-size: 1.2rem;
   color: #374151;
-  max-width: 600px;
+  line-height: 1.8;
+  margin-top: 1rem;
 }
 
 /* ========== VISION SECTION ========== */
-.vision-content {
+.vision-section {
+  padding: 4rem 8%;
+}
+
+.vision-container {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 4rem;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .vision-content {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
+.vision-container.reverse {
+  flex-direction: row-reverse;
 }
 
-/* iPad */
-@media (max-width: 1024px) {
-  .vision-content {
-    padding: 0 2rem;
-    text-align: center;
-  }
+.vision-image, .vision-text {
+  flex: 1;
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .vision-content {
-    padding: 0 1rem;
-  }
-}
-
-/* ========== DESIGN PROCESS ========== */
-.process-title {
+.vision-text p {
   font-family: bricolage;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 1rem 0;
 }
 
-.process-card img {
+.vision-text p strong {
+  font-size: 1.6rem;
+}
+
+/* ========== DESIGN PROCESS SECTION ========== */
+.process-section {
+  background-color: #f8f8f8;
+  padding: 4rem 8%;
+}
+
+.process-heading {
+  font-family: bricolage;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.process-subtitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.process-text {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.process-card {
+  text-align: center;
+}
+
+.process-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.process-icon img {
   width: 70px;
   height: 70px;
 }
 
-/* Center items on small screens */
-@media (max-width: 768px) {
-  .process-card {
-    text-align: center;
-  }
-}
-
-/* ========== GALLERY ========== */
-.gallery-title {
-  font-family: bricolage;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+.process-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #000;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
 }
 
-/* Fix image height on mobile */
-@media (max-width: 640px) {
-  .gallery-item {
-    height: 220px;
-  }
+.process-title {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
 }
 
-/* ========== VIDEO HERO TEXT ========== */
-.hero-title {
-  font-family: bricolage;
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  font-weight: bold;
+.process-desc {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ========== GALLERY SECTION ========== */
+.gallery-section {
+  background-color: #f8f8f8;
+  padding: 4rem 8%;
   text-align: center;
+}
+
+.gallery-heading {
+  font-family: bricolage;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .about-container, .vision-container {
+    flex-direction: column;
+  }
+
+  .vision-container.reverse {
+    flex-direction: column;
+  }
+
+  .vision-text {
+    padding: 0;
+  }
 }
