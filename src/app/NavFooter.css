@@ -1,4 +1,4 @@
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -82,20 +82,20 @@
   background-color: #ffb347;
 }
 
-/* Mobile menu */
+/* Mobile */
 .navbar__menu-btn {
   display: none;
 }
 
 .navbar__mobile {
-  display: none;
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .navbar__mobile.open {
-  display: block;
-  max-height: 400px;
+  max-height: 500px;
   opacity: 1;
 }
 
@@ -108,7 +108,40 @@
   margin-bottom: 1rem;
 }
 
-/* FOOTER */
+.navbar__mobile ul li a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.navbar__mobile ul li a:hover,
+.navbar__mobile ul li a.active {
+  color: orange;
+  background-color: #ffe5b4;
+  border-radius: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar__links,
+  .navbar__social-cta {
+    display: none;
+  }
+
+  .navbar__menu-btn {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+}
+
+/* ===== FOOTER ===== */
 .footer {
   background-color: #fff;
   color: #000;
