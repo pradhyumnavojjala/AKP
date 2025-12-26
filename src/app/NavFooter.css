@@ -129,6 +129,7 @@
   .navbar__links,
   .navbar__social-cta {
     display: none;
+    margin-bottom: 2rem;
   }
 
   .navbar__menu-btn {
@@ -138,6 +139,7 @@
     border: none;
     cursor: pointer;
     color: black;
+      margin-bottom: 2rem;
   }
 }
 

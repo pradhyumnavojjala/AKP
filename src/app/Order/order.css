@@ -1,3 +1,4 @@
+/* ========== GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
@@ -5,78 +6,67 @@
   font-family: Poppins, sans-serif;
 }
 
-/* HERO / ORDER SECTION */
+/* ========== HERO / ORDER SECTION ========== */
 .order-section {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
   background: #000;
   color: #c8cef7;
   overflow: hidden;
-  padding: 4rem 0;
+  padding: 4rem 1rem;
 }
 
+/* --- Background Image --- */
 .image-wrapper {
-    position: absolute;
-    inset: 0;
-    display: flex;           
-    justify-content: center; 
-    align-items: center;     
-    z-index: 0; /* background image */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
 }
 
 .image-wrapper img {
-    width: auto;
-    height: 100%;
+  width: 100%;
+  max-height: 500px; /* prevents huge image on mobile */
+  object-fit: cover;
 }
 
-.container .content {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; /* text above image */
-    text-align: top;
-    color: #c8cef7; /* or whatever color you want */
-}
-
-.container .content h1 {
-    font-family: Poppins;
-    font-size: 30vh;
-    line-height: 2;
-    margin: 0;
-}
-
-
+/* --- Overlay (optional darken) --- */
 .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
-/* HERO TITLE */
-.hero-title {
+/* --- Hero Text --- */
+.container .content {
+  position: relative;
   z-index: 1;
   text-align: center;
-  margin-bottom: 3rem;
+  width: 100%;
+  margin-top: 2rem;
 }
 
-.hero-title h1 {
+.container .content h1 {
   font-size: clamp(3rem, 10vw, 8rem);
-  line-height: 1;
+  line-height: 1.1;
+  color: #c8cef7;
 }
 
-/* GLASS CARDS */
+/* --- Glass Cards --- */
 .glass-cards {
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin: 2rem 0 4rem;
+  z-index: 1;
 }
 
 .glass {
@@ -84,10 +74,10 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(#b5b5b5, transparent);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .glass img {
@@ -108,7 +98,7 @@
   margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
-/* FORM SECTION */
+/* ========== FORM SECTION ========== */
 .form-container {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +133,7 @@
   line-height: 1.5;
 }
 
-/* FORM */
+/* --- FORM --- */
 form {
   width: 350px;
   display: grid;
@@ -151,7 +141,7 @@ form {
   background: #fff;
   padding: 2.5rem;
   border-radius: 24px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -187,17 +177,44 @@ button {
   border-radius: 16px;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
+  .order-section {
+    padding: 6rem 1rem;
+  }
+
+  .container .content h1 {
+    font-size: clamp(2rem, 12vw, 5rem);
+    margin-top: 1rem;
+  }
+
+  .image-wrapper img {
+    max-height: 300px;
+  }
+
+  .glass-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .glass {
+    width: 90%;
+    max-width: 300px;
+    position: relative;
+    margin: 0 auto;
+  }
+
   .form-container {
     flex-direction: column;
     align-items: center;
+    padding: 3rem 1rem;
   }
 
   form, .flow {
