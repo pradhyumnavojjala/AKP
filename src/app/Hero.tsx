@@ -288,33 +288,35 @@ export default function Hero() {
                 className='h-full'
             >
                 {HeroSlides.map((slide, index) => (
-                    <SwiperSlide key={index}>
-                        <div
-                            className="relative w-full h-screen flex justify-center items-center text-white px-6"
-                            style={{ backgroundImage: `url(${slide.bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
-                        >
-                            <div className="absolute inset-0 bg-black/20 z-0"></div>
-                            <div style={{margin: "2rem"}} className="hero-content relative z-10 max-w-4xl text-center gap-6">
-                                <span style={{margin: "3rem", fontSize: "30px"}} className='text-xl font-medium uppercase'>{slide.span}</span>
-                                <h1 style={{fontSize: "100px"}} className="text-7xl lg:text-9xl font-bold font-bricolage whitespace-pre-spaces leading-tight lg:leading-none">
-                                    {slide.title}
-                                </h1>
-                                <div style={{margin: "3rem"}} className="flex flex-col md:flex-row gap-4 text-lg justify-center">
-                                    {slide.paragraphs.map((pera, i) => (
-                                        <p key={i} className='max-w-xl'>{pera}</p>
-                                    ))}
-                                </div>
-                                <Link href={slide.buttonLink}>
-                                    <button 
-                                        style={{margin: "4rem", fontSize: 'x-large', fontWeight: 'bold'}} 
-                                        className='mt-6 cursor-pointer rounded-sm px-8 py-2.5 border-2 border-white text-white uppercase tracking-widest hover:bg-orange-500 hover:border-orange-500 hover:text-white transition duration-300'
-                                    >
-                                        {slide.buttonText} <i className="bi bi-arrow-right ml-2 text-xl"></i>
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </SwiperSlide>
+                    <SwiperSlide>
+  <div
+    className="hero-slide"
+    style={{ backgroundImage: `url(${slide.bgImage})` }}
+  >
+    <div className="hero-overlay"></div>
+
+    <div className="hero-content">
+      <span className="hero-span">{slide.span}</span>
+
+      <h1 className="hero-title">
+        {slide.title}
+      </h1>
+
+      <div className="hero-text">
+        {slide.paragraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
+
+      <Link href={slide.buttonLink}>
+        <button className="hero-button">
+          {slide.buttonText} →
+        </button>
+      </Link>
+    </div>
+  </div>
+</SwiperSlide>
+
                 ))}
             </Swiper>
             

@@ -1,62 +1,117 @@
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* ===== HERO RESET ===== */
 .hero-slide {
   position: relative;
   width: 100%;
   min-height: 100svh;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.45);
 }
 
+/* ===== CONTENT ===== */
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   max-width: 1100px;
   text-align: center;
-  color: white;
-  padding: 7rem 1.25rem 0;
+  color: #fff;
+  padding: 8rem 1.5rem 2rem;
   animation: fadeUp 1.2s ease forwards;
 }
 
+.hero-span {
+  display: block;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+/* ===== TITLE ===== */
 .hero-title {
   font-family: var(--font-bricolage);
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 1.1;
-  margin: 0 auto;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  white-space: pre-line;
 }
 
-/* Desktop */
+/* ===== TEXT ===== */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* ===== BUTTON ===== */
+.hero-button {
+  margin-top: 3rem;
+  padding: 14px 42px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.hero-button:hover {
+  background: #f97316;
+  border-color: #f97316;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 7rem;
+    font-size: 6.5rem;
   }
 }
 
-/* Tablet */
 @media (max-width: 1023px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 4.2rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
+  .hero-content {
+    padding-top: 9rem;
+  }
+
   .hero-title {
     font-size: 2.6rem;
     line-height: 1.2;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
   }
 }
