@@ -1,3 +1,15 @@
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  padding-top: 4rem; /* space for fixed navbar */
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
@@ -7,18 +19,20 @@
   height: 4rem;
   z-index: 50;
   background: white;
-  transition: all 0.5s ease-in-out;
-}
-
-.navbar.sticky {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 12%;
 }
 
 .navbar__logo {
@@ -46,7 +60,8 @@
   color: black;
 }
 
-.navbar__link:hover, .navbar__link.active {
+.navbar__link:hover,
+.navbar__link.active {
   background-color: #ffe5b4;
   color: orange;
 }
@@ -82,9 +97,14 @@
   background-color: #ffb347;
 }
 
-/* Mobile */
+/* ===== MOBILE MENU ===== */
 .navbar__menu-btn {
   display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
 
 .navbar__mobile {
@@ -101,7 +121,7 @@
 
 .navbar__mobile ul {
   list-style: none;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
 .navbar__mobile ul li {
@@ -111,7 +131,7 @@
 .navbar__mobile ul li a {
   font-size: 1.2rem;
   text-decoration: none;
-  color: white;
+  color: black;
   display: block;
   padding: 0.5rem 0;
   transition: color 0.3s ease, background 0.3s ease;
@@ -124,22 +144,19 @@
   border-radius: 0.5rem;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE NAVBAR ===== */
 @media (max-width: 1024px) {
   .navbar__links,
   .navbar__social-cta {
     display: none;
-    margin-bottom: 2rem;
   }
 
   .navbar__menu-btn {
     display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: black;
-      margin-bottom: 2rem;
+  }
+
+  .navbar__container {
+    padding: 0 2rem;
   }
 }
 
@@ -198,7 +215,8 @@
   flex-wrap: wrap;
 }
 
-.footer__right h3, .footer__right h4 {
+.footer__right h3,
+.footer__right h4 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 2rem;
@@ -224,4 +242,11 @@
   padding-top: 1rem;
   font-size: 1rem;
   margin-top: 2rem;
+}
+
+/* ===== RESPONSIVE FOOTER ===== */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 4rem 2rem;
+  }
 }
