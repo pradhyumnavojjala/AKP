@@ -19,7 +19,7 @@ export default function Nav() {
     }, []);
 
     const navLinks = [
-        { name: 'Home', href: '/Hero' },
+        { name: 'Home', href: '/' },
         { name: 'Order', href: '/Order' },
         { name: 'Sofa', href: '/Sofa' },
         { name: 'About Us', href: '/About-us' },
