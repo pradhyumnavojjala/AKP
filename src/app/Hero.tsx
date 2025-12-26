@@ -278,564 +278,409 @@ export default function Hero() {
   return (
     <>
         {/* Hero Section (Unchanged) */}
-        <div className="w-full h-screen relative">
-            {/* ... Hero Swiper Code ... */}
-            <Swiper
-                modules={[Navigation, Autoplay]}
-                loop={true}
-                autoplay={{ delay: 5000, disableOnInteraction: false }}
-                navigation={{ nextEl: '.custom-swiper-next', prevEl: '.custom-swiper-prev' }}
-                className='h-full'
-            >
-                {HeroSlides.map((slide, index) => (
-                    <SwiperSlide>
-  <div
-    className="hero-slide"
-    style={{ backgroundImage: `url(${slide.bgImage})` }}
+        {/* HERO SECTION */}
+<div className="hero-wrapper">
+  <Swiper
+    modules={[Navigation, Autoplay]}
+    loop
+    autoplay={{ delay: 5000, disableOnInteraction: false }}
+    navigation={{
+      nextEl: '.custom-swiper-next',
+      prevEl: '.custom-swiper-prev'
+    }}
   >
-    <div className="hero-overlay"></div>
+    {HeroSlides.map((slide, index) => (
+      <SwiperSlide key={index}>
+        <div
+          className="hero-slide"
+          style={{ backgroundImage: `url(${slide.bgImage})` }}
+        >
+          <div className="hero-overlay"></div>
 
-    <div className="hero-content">
-      <span className="hero-span">{slide.span}</span>
+          <div className="hero-content">
+            <span className="hero-span">{slide.span}</span>
 
-      <h1 className="hero-title">
-        {slide.title}
-      </h1>
+            <h1 className="hero-title">{slide.title}</h1>
 
-      <div className="hero-text">
-        {slide.paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
+            <div className="hero-text">
+              {slide.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+
+            <Link href={slide.buttonLink}>
+              <button className="hero-button">
+                {slide.buttonText} →
+              </button>
+            </Link>
+          </div>
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+  {/* Navigation */}
+  <div className="custom-swiper-prev">‹</div>
+  <div className="custom-swiper-next">›</div>
+</div>
+
+        
+        {/* Marquee (Unchanged) */}
+       {/* MARQUEE SECTION */}
+<div className="marquee-wrapper">
+  <div className="marquee-track">
+    {MarqueeItems.map((item, idx) => (
+      <div key={idx} className="marquee-item">
+        {item}
+      </div>
+    ))}
+  </div>
+</div>
+
+        
+        {/* About Section (Unchanged) */}
+       {/* ABOUT SECTION */}
+<section className="about-section">
+  {/* TOP */}
+  <div className="about-top">
+    <div className="about-title">
+      <h2>Sofa & Custom Design Solutions</h2>
+    </div>
+
+    <div className="about-intro">
+      <h3>About Us</h3>
+      <p>
+        At Our Sofa Company, we're committed to transforming spaces through
+        creative vision, elegant design, and solutions that truly reflect your lifestyle.
+      </p>
+      <a href="/About-us">Company Info ↗</a>
+    </div>
+  </div>
+
+  {/* CONTENT */}
+  <div className="about-content">
+    {/* SWIPER */}
+    <div className="about-swiper">
+      {isClient && (
+        <Swiper
+          modules={[EffectCards, Autoplay, Navigation]}
+          effect="cards"
+          loop
+          autoplay={{ delay: 1500 }}
+          navigation={{
+            nextEl: '.about-next',
+            prevEl: '.about-prev'
+          }}
+        >
+          {[
+            '/image/interior.jpg',
+            '/image/interior2.jpg',
+            '/image/interior3.jpeg'
+          ].map((src, i) => (
+            <SwiperSlide key={i}>
+              <img src={src} alt="interior" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
+
+      <div className="about-nav">
+        <div className="about-prev">‹</div>
+        <div className="about-next">›</div>
+      </div>
+    </div>
+
+    {/* TABS */}
+    <div className="about-tabs">
+      <div className="tab-buttons">
+        {tabs.map(tab => (
+          <button
+            key={tab.key}
+            className={activeTab === tab.key ? 'active' : ''}
+            onClick={() => SetActiveTab(tab.key as keyof TabContent)}
+          >
+            {tab.label}
+          </button>
         ))}
       </div>
 
-      <Link href={slide.buttonLink}>
-        <button className="hero-button">
-          {slide.buttonText} →
-        </button>
-      </Link>
+      <div className="tab-text">
+        {tabContent[activeTab].map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
+      </div>
     </div>
   </div>
-</SwiperSlide>
+</section>
 
-                ))}
-            </Swiper>
-            
-            <div style={{width: '40px',
-    height: '40px',
-    borderRadius: '50%',
-    backgroundColor: '#000',
-    border: 'none',
-    fontFamily: 'monospace',
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 'x-large',
-    transition: '.5s',
-    zIndex: '100',
-    
-            }}className="custom-swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 cursor-pointer p-4 md:p-6 bg-black/50 text-white hover:bg-orange-500 transition-colors duration-300">
-                <i className="ri-arrow-left-s-line text-3xl"></i>
-            </div>
-            <div style={{
-                width: '40px',
-    height: '40px',
-    borderRadius: '50%',
-    backgroundColor: '#000',
-    border: 'none',
-    fontFamily: 'monospace',
-    color: '#eee',
-    fontWeight: 'bold',
-    fontSize: 'large',
-    transition: '.5s',
-    zIndex: '100',
-            }} className="custom-swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-20 cursor-pointer p-4 md:p-6 bg-black/50 text-white hover:bg-orange-500 transition-colors duration-300">
-                <i className="ri-arrow-right-s-line text-3xl"></i>
-            </div>
-        </div>
-        
-        {/* Marquee (Unchanged) */}
-        <div style={{marginTop: '3rem'}} className="overflow-hidden whitespace-nowrap my-10 relative">
-            <div className="animate-marquee flex w-max gap-8">
-                {MarqueeItems.map((item , idx) => 
-                    <div 
-                    style={{backgroundColor: "gray", borderRadius: "50px"}}
-                    key={idx}
-                    className="min-w-62.5 h-25 border-4 border-black flex items-center justify-center text-black text-2xl font-bold uppercase px-5 my-4"
-                    >
-                        {item}
-                    </div>
-                )}
-            </div>
-        </div>
-        
-        {/* About Section (Unchanged) */}
-        <section style={{marginTop: '3rem'}} className="px-[8%] lg:px-[12%] py-12">
-            
-            {/* Top Section */}
-            <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-                <div className="lg:w-3/5">
-                    <h2 style={{fontSize: "6rem", fontFamily: "bricolage"}} className="text-7xl leading-tight lg:text-9xl lg:leading-none font-bold tracking-wider font-bricolage">
-                        Sofa & custom Design Solutions
-                    </h2>
-                </div>
-                <div className="lg:w-2/5">
-                    <h3 style={{fontSize: "2rem", fontFamily: "bold"}} className="underline uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-                        About Us
-                    </h3>
-                    <p style={{fontSize: "1rem", margin: "2rem", fontStyle: "italic"}} className="text-base mb-4 text-gray-700">
-                        At Our Sofa Company, We're committed to transforming spaces through creative vision, 
-                        elegant design, and solutions that truly reflect your lifestyle. 
-                    </p>
-                    <a href="/About-us" style={{fontSize: "1.2rem", color: "orange", margin: "2rem"}} className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                     <span className="ml-2">Company Info</span>
-                     <i className="bi bi-arrow-up-right ms-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            {/* Main Section: Swiper Cards and Tabs */}
-            <div className="mt-12 flex flex-col lg:flex-row justify-between gap-10">
-                
-                {/* Column 1: Swiper Cards */}
-                <div className="lg:w-1/2 w-full relative">
-                    {isClient && (
-                         <Swiper
-                            modules={[Navigation, EffectCards, Autoplay]}
-                            loop={true}
-                            effect='cards'
-                            grabCursor={true}
-                            autoplay={{delay: 1500}}
-                            navigation={{ nextEl: '.swiper-about-next', prevEl: '.swiper-about-prev' }}
-                            className='rounded h-145' 
-                            style={{padding: '30px'}}
-                        >
-                            {[
-                                '/image/interior.jpg',
-                                '/image/interior2.jpg',
-                                '/image/interior3.jpeg',
-                            ].map((src , index) => (
-                                <SwiperSlide key={index}>
-                                    <img 
-                                    src={src} 
-                                    alt={`slide ${index + 1}`} 
-                                    className="w-full h-145 object-cover rounded" 
-                                    />
-                                </SwiperSlide>
-                            ))}
-
-                            <div style={{ marginTop: '2rem', fontSize: "x-large"}}
-                            
-                            className="flex justify-center mt-6 gap-4 relative z-20 pointer-events-none">
-                                <div className="swiper-about-prev p-3 bg-gray-200 rounded-full hover:bg-orange-500 hover:text-white transition pointer-events-auto cursor-pointer">
-                                    <i className="ri-arrow-left-s-line text-2xl"></i>
-                                </div>
-                                <div className="swiper-about-next p-3 bg-gray-200 rounded-full hover:bg-orange-500 hover:text-white transition pointer-events-auto cursor-pointer">
-                                    <i className="ri-arrow-right-s-line text-2xl"></i>
-                                </div>
-                            </div>
-                        </Swiper>
-                    )}
-                </div>
-
-                {/* Column 2: Tabs & Content */}
-                <div className="lg:w-1/2 w-full px-0 lg:px-10 pt-10">
-                    {/* Tabs */}
-                    <div className="flex gap-6 border-b mb-6">
-                        {tabs.map((tab) => (
-                            <button 
-                            key={tab.key}
-                            style={{fontSize: "1.5rem", fontFamily: "bold"}}
-                            className={`relative pb-2 text-lg font-medium transition-colors cursor-pointer ${activeTab === tab.key
-                                ? 'text-black after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-black'
-                                : 'text-gray-400 hover:text-black'
-                            }`}
-                            onClick={() => SetActiveTab(tab.key as keyof TabContent)}
-                            >
-                                {tab.label}
-                            </button>
-                            
-                        ))}
-                    </div>
-                    <hr style={{margin: "1rem"}} className="my-11 border-gray-300" />
-
-                    {/* Tab Content */}
-                    <div className="space-y-4 text-gray-700">
-                        {tabContent[activeTab].map((para , idx) => (
-                            <p key={idx} style={{fontSize: "1rem", fontStyle: "italic"}} className="text-base leading-relaxed">
-                                {para}
-                            </p>
-                        ))}
-                    </div>
-                </div>
-                
-            </div>
-        </section>
 
         {/* Design Process */}
-        <section style={{ marginTop: '3rem'}} className="bg-gray-100 px-[8%] lg:px-[12%] py-16">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
-                    <div className="lg:w-1/2 mb-10 lg:mb-0">
-                        <h1 style={{fontSize: "5rem", fontFamily: "bricolage", margin: "2rem", fontStyle: "bold"}} className="text-8xl font-[bricolage-font] font-semibold">
-                            Our Design Process
-                        </h1>
-                    </div>
-                    <div className="lg:w-1/3">
-                    <h3 style={{fontFamily: "bold"}} className="uppercase tracking-wide font-semibold border-b border-black inline-flex">
-                        Process
-                    </h3>
-                    <hr style={{width: "80px", fontFamily: "bold"}}/>
-                    <p style={{margin: "0.4rem"}} className="text-lg max-w-md">
-                        Discover how our thoughtful process transforms ideas into personalized, function and beautifully styled spaces. 
-                    </p>
-                    </div>
-                </div>
-                
-                {/* FIX: Re-inserting the correct JSX structure for the process steps */}
-                <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 pt-10 gap-8"> 
-                    {processContent.map(({id, imgSrc, title, description}) => (
-                        <div key={id} className="w-full relative mb-10">
-                            <div className="flex flex-col items-center cursor-pointer relative group">
-                                {/* Circle with image and number */}
-                                <div style={{margin: "2rem"}} className="w-42.5 h-42.5 rounded-full shadow-lg flex items-center justify-center relative hover:-translate-y-1.5 transition-transform duration-300">
-                                    <img 
-                                    src={imgSrc}
-                                    alt={`process ste ${id}`} 
-                                    className='w-17.5 h-17.5 transition-transform duration-500 ease-out group-hover:-rotate-y-360'
-                                    />
-                                    <span className="absolute -top-3 right-10 bg-black text-white w-8 h-8 flex items-center justify-center rounded-full text-sm font-semibold select-none">
-                                        {id}.
-                                    </span>
-                                </div>
+        <section className="design-process">
+        <div className="design-process__header">
+          <div>
+            <h1>Our Design Process</h1>
+          </div>
+          <div>
+            <h3>Process</h3>
+            <p>
+              Discover how our thoughtful process transforms ideas into
+              personalized, functional, and beautifully styled spaces.
+            </p>
+          </div>
+        </div>
 
-                                {/* Title */}
-                                <h2 style={{margin: "1rem", fontSize: "1.2rem", fontFamily: "bold"}} className="font-bricolage text-xl mt-6 mb-4 relative after:absolute after:bottem-0 after:left-0 after:h-0.5 after:bg-black after:w-0 group-hover:after:w-full after:transition-width after:duration-300">
-                                    {title}
-                                </h2>
-                                {/* Description */}
-                                <p style={{margin: "1rem", fontSize: "1.2rem"}} className="text-center text-base max-w-[70%] mx-auto">{description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className="design-process__grid">
+          {processContent.map(({ id, imgSrc, title, description }) => (
+            <div key={id} className="process-step">
+              <div className="process-step__circle">
+                <img src={imgSrc} alt={`Step ${id}`} />
+                <span>{id}.</span>
+              </div>
+              <h2>{title}</h2>
+              <p>{description}</p>
             </div>
-        </section>
+          ))}
+        </div>
+      </section>
         {/* Services */}
-        <section style={{marginTop: '3rem'}} className="px-[8%] lg:px-[12%] py-12">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-                <div className="lg:w-3/5">
-                    <h2 style={{fontSize: "6rem", fontFamily: "bricolage"}} className="text-7xl leading-tight lg:text-9xl lg:leading-none font-bold tracking-wider font-bricolage">
-                        Our Design Solutions
-                    </h2>
-                </div>
-                <div className="lg:w-2/5">
-                    <h3 style={{fontSize: "2rem", fontFamily: "bold"}} className="underline uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-                        Our services
-                    </h3>
-                    <p style={{fontSize: "1rem", margin: "2rem", fontStyle: "italic"}} className="text-base mb-4 text-gray-700">
-                        Whether you're dreaming of a cozy sofa retreat or a bold, mordern workspace, 
-                        our expert designers bring your vision to life
-                    </p>
-                    <button style={{fontSize: "1.2rem", color: "orange", margin: "2rem"}} className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                     <span className="ml-2">All Services</span>
-                    <i className="bi bi-arrow-up-right ms-2"></i>
-                    </button>
-                </div>
-            </div> 
+       {/* SERVICES SECTION */}
+<section className="services-section">
+  {/* HEADER */}
+  <div className="services-header">
+    <div className="services-title">
+      <h2>Our Design Solutions</h2>
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-                {Services.map((service , index) => (
-                    <div 
-                    style={{margin: "2rem"}}
-                    key={index}
-                    className="border border-black rounded-xl p-6 transition-all duration-300 hover:border-transparent shadow hover:shadow-lg hover:-translate-y-1 cursor-pointer"
-                    >
-                        <Image 
-                        src={service.icon} 
-                        alt={service.title}
-                        width={80}
-                        height={80}
-                        className='mb-4 transition-transform duration-700 group-hover:rotate-360'
-                        />
-                        <h2 style={{fontSize: "2rem", fontFamily: "bold", border: "2rem"}} className="text-3xl font-bricolage relative inline-block mt-2 mb-2 after:block  
-                        after:contrast-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0
-                        after:bg-black hover:after:w-full after:transition-all after:duration-300">
-                            {service.title}
-                        </h2>
-                        <p style={{fontSize: "1.2rem"}} className="text-gray-700 font-normal w-4/5">{service.description}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
+    <div className="services-intro">
+      <h3>Our Services</h3>
+      <p>
+        Whether you're dreaming of a cozy sofa retreat or a bold, modern workspace,
+        our expert designers bring your vision to life.
+      </p>
+      <a href="/services">All Services ↗</a>
+    </div>
+  </div>
+
+  {/* CARDS */}
+  <div className="services-grid">
+    {Services.map((service, index) => (
+      <div className="service-card" key={index}>
+        <Image
+          src={service.icon}
+          alt={service.title}
+          width={80}
+          height={80}
+        />
+        <h4>{service.title}</h4>
+        <p>{service.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Sofa */}
-        <section style={{marginTop: '3rem'}} className="px-[8%] lg:px-[12%] py-16 relative">
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-                <div className="lg:w-3/5">
-                    <h2 style={{fontSize: "6rem", fontFamily: "bricolage"}} className="text-7xl leading-tight lg:text-9xl lg:leading-none font-bold tracking-wider font-bricolage">
-                        Our Sofas
-                    </h2>
+         <section className="our-sofas">
+        <div className="our-sofas__header">
+          <div className="our-sofas__title">
+            <h2>Our Sofas</h2>
+          </div>
+          <div className="our-sofas__desc">
+            <h3>Our Sofas</h3>
+            <p>
+              We build our sofas with a perfect blend of comfort, style, and
+              durability, ensuring each piece not only enhances your living
+              space but also stands the test of time.
+            </p>
+            <Link href="/sofa1">
+              <button className="our-sofas__view-more">
+                View More
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        <Swiper
+          loop={true}
+          modules={[Autoplay, Navigation]}
+          navigation={{
+            nextEl: ".sofa-swiper-next",
+            prevEl: ".sofa-swiper-prev",
+          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          slidesPerView={1}
+          spaceBetween={20}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {SofaData.map((sofa) => (
+            <SwiperSlide key={sofa.id} className="sofa-slide">
+              <Link href={`/Sofa/${sofa.id}`}>
+                <img src={sofa.image} alt={sofa.title} className="sofa-slide__img" />
+                <div className="sofa-slide__info">
+                  <h3>{sofa.title}</h3>
+                  <p>{sofa.desc}</p>
+                  <span>{sofa.Price}</span>
                 </div>
-                <div className="lg:w-2/5">
-                    <h3 style={{fontSize: "2rem", fontFamily: "bold"}} className="underline uppercase tracking-wider font-semibold border-b pb-2 mb-6 text-sm w-fit">
-                        Our Sofas
-                    </h3>
-                    <p style={{fontSize: "1rem", margin: "2rem", fontStyle: "italic"}} className="text-base mb-4 text-gray-700">
-                        We build our sofas with a perfect blend of comfort, style, and durability, ensuring each piece not only enhances your living space but also stands the test of time.
-                    </p>
-                    <a href="/sofa1" style={{fontSize: "1.2rem", color: "orange", margin: "2rem"}} className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                    <button style={{fontSize: "1.2rem", color: "orange", margin: "2rem"}} className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                     <span className="ml-2">View More</span>
-                    <i className="bi bi-arrow-up-right ms-2"></i>
-                    </button>
-                    </a>
-                </div>
-            </div>   
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-            <Swiper
-            loop={true}
-            modules={[Autoplay, Navigation]}
-            navigation={{
-                nextEl: '.sofa-swiper-next', 
-                prevEl: '.sofa-swiper-prev' 
-            }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            slidesPerView={1}
-            spaceBetween={20}
-            breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            }}
-            className='relative'
-
-            >
-                {SofaData.map((sofa) => (
-                    <SwiperSlide key={sofa.id} className="bg-white border border-gray-300 rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow duration-300">
-                      <Link href={`/Sofa/${sofa.id}`}>
-                        <img 
-                        src={sofa.image} 
-                        alt={sofa.title} 
-                        className="w-full h-48 object-cover"
-                        />
-                        <div className="p-4">
-                          <h3 style={{ fontSize: "1.5rem", fontFamily: "bold" }} className="text-xl font-bricolage mb-2">{sofa.title}</h3>
-                          <p style={{ fontSize: "1.2rem" }} className="text-gray-600 mb-4">{sofa.desc}</p>
-                          <span style={{ fontSize: "1.2rem" }} className="text-lg font-semibold text-black">{sofa.Price}</span>
-                        </div>
-                      </Link>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-
-            {/* Swiper Navigation Buttons */}
-            <div className="sofa-swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-20 cursor-pointer p-4 md:p-6 bg-black/50 text-white hover:bg-orange-500 transition-colors duration-300">
-                <i className="ri-arrow-left-s-line text-3xl"></i>
-            </div>
-            <div className="sofa-swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-20 cursor-pointer p-4 md:p-6 bg-black/50 text-white hover:bg-orange-500 transition-colors duration-300">
-                <i className="ri-arrow-right-s-line text-3xl"></i>
-            </div>
-        </section>
+        <div className="sofa-swiper-prev">{"<"}</div>
+        <div className="sofa-swiper-next">{">"}</div>
+      </section>
 
         {/* Marquee 2 */}
-        <div style={{marginTop: '3rem'}} className="overflow-hidden whitespace-nowrap py-12">
-            <div className="animate-marquee flex items-center gap-8">
-                {MarqueeItems2.map((item , index) => (
-                    <div key={index} className='flex items-center gap-10 mr-12'>
-                        <div className="w-62.5 h-25 overflow-hidden rounded-full">
-                            <Image
-                                src={item.imgs}
-                                alt={item.title}
-                                width={250}
-                                height={100}
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-
-                        <div className="min-w-62.5 h-25 border-2 border-gray-300 rounded-full flex items-center justify-center">
-                            <span style={{fontSize: "1.5rem", fontFamily: "bold"}} className="text-2xl font-bold uppercase">{item.title}</span>
-                        </div>
-                    </div>
-                ))}
-
-                {MarqueeItems2.map((item , index) => (
-                    <div key={`clone-${index}`} className="flex items-center gap-10 mr-12">
-                        <div className="w-62.5 h-25 overflow-hidden rounded-full">
-                            <Image
-                                src={item.imgs}
-                                alt={item.title || 'Sofa Image'}
-                                width={250}
-                                height={100}
-                                className="object-cover"
-                            />
-                        </div>
-
-                        <div className="min-w-62.5 h-25 border-2 border-gray-300 rounded-full flex items-center justify-center">
-                            <span className="text-black text-2xl font-bold uppercase px-4 text-center">
-                                {item.title}
-                            </span>
-                        </div>
-                    </div>
-                ))}
+         <div className="marquee2">
+        <div className="marquee2__inner">
+          {MarqueeItems2.concat(MarqueeItems2).map((item, index) => (
+            <div key={index} className="marquee2__item">
+              <div className="marquee2__image">
+                <Image
+                  src={item.imgs}
+                  alt={item.title}
+                  width={250}
+                  height={100}
+                />
+              </div>
+              <div className="marquee2__text">{item.title}</div>
             </div>
+          ))}
         </div>
+      </div>
+
 
         {/* Service2 */}
-        <section style={{marginTop: '3rem'}} className='px-[8%] lg:px-[12%] py-12 bg-gray-100'>
-            <div className="flex flex-col lg:flex-row justify-between items-center mb-12">
-                <div className="lg:w-2/3 mb-8 lg:mb-0">
-                <h1 style={{fontSize: "5rem", fontFamily: "bricolage", fontWeight: "bold"}} className="text-8xl font-bricolage font-bold">
-                    Sofa <br/>Design Services
-                </h1>
-                </div>
-                <div className="lg:w-1/3">
-                <h3 style={{fontSize: "2.5rem", fontWeight: "bold"}}className="underline text-2xl font-jost font-semibold mb-3">Our Service</h3>
-                <p style={{fontSize: "1rem", margin: "2rem", fontStyle: "italic"}} className="text-base mb-4 text-gray-700">
-                        Whether you're dreaming of a cozy sofa retreat or a bold, mordern workspace, 
-                        our expert designers bring your vision to life
-                    </p>
-                    <a href="/" className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                    <button style={{fontSize: "1.2rem", color: "orange", margin: "2rem"}} className="underline inline-flex items-center text-black font-medium hover:underline text-lg">
-                     <span className="ml-2">All Services</span>
-                    <i className="bi bi-arrow-up-right ms-2"></i>
-                    </button>
-                    </a>
-                </div>
-            </div>
+         <section className="services2">
+        <div className="services2__header">
+          <div>
+            <h1>Sofa <br/>Design Services</h1>
+          </div>
+          <div>
+            <h3>Our Service</h3>
+            <p>
+              Whether you're dreaming of a cozy sofa retreat or a bold, modern
+              workspace, our expert designers bring your vision to life.
+            </p>
+            <button>All Services</button>
+          </div>
+        </div>
 
-           {service2.map((service , index) => (
-            <div key={index} className="border border-black rounded-xl p-6 transition-all duration-300 hover:border-transparent shadow hover:shadow-lg hover:-translate-y-1 cursor-pointer">
-                <Image 
-                style={{margin: "2rem", fontFamily: "bold"}}
-                src={service.icon} 
-                alt={service.title}
-                width={400}
-                height={400}
-                className='mb-4 transition-transform duration-700 group-hover:rotate-360'
-                />
-                <h2 style={{fontFamily: "bricolage", fontSize: "3rem", fontWeight: "bold", textAlign: "center"}} className="text-3xl font-bricolage relative inline-block mt-2 mb-2 after:block after:content-[''] after:absolute
-                after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-black hover:after:w-full after:transition-all 
-                after:duration-300">
-                    {service.title}
-                </h2>
-                <p style={{fontFamily: "bricolage", fontSize: "1.2rem"}} className="text-gray-700 font-normal w-4/5">
-                    {service.description}
-                </p>
+        <div className="services2__grid">
+          {service2.map((service, index) => (
+            <div key={index} className="service-card">
+              <Image src={service.icon} alt={service.title} width={400} height={400} />
+              <h2>{service.title}</h2>
+              <p>{service.description}</p>
             </div>
-           ))}
-        </section>
+          ))}
+        </div>
+      </section>
 
         {/* Gallery */}
-        <section style={{marginTop: '3rem'}} className="px-[8%] lg:px-[12%] py-16">
-            <div style={{maxWidth: "1200px", margin: "0 auto", padding: "0 1rem"}} className="container mx-auto px-4">
-                <h1 style={{fontFamily: "bricolage", fontSize: "5rem", fontWeight: "bold", margin: "3rem 0", marginTop: "3rem"}} className="text-8xl font-bricolage font-bold mb-10">Gallery</h1>
-                <div style={{display: "grid", fontSize: "1.2rem", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem"}} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {galleryItems.map((item , index) => (
-                        <a 
-                        key={index}
-                        href={item.img} 
-                        data-lightbox={item.lightbox}
-                        data-title={item.title}
-                        className='group relative block overflow-hidden rounded-md'
-                        >
-                            <div className="relative w-full h-100">
-                                <Image
-                                    src={item.img}
-                                    alt={item.title}
-                                    fill
-                                    className="transition-transform duration-500 group-hover:scale-105 object-cover"
-                                />
-                            </div>
+      {/* GALLERY SECTION */}
+<section className="gallery-section">
+  <div className="gallery-header">
+    <h2>Featured Collection</h2>
+    <p>
+      A curated selection of our finest designs crafted for comfort,
+      elegance, and durability.
+    </p>
+  </div>
 
-                            <div className="absolute bottom-0 left-0 w-full p-4 bg-linear-to-t from-black to-transparent z-10
-                            opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500
-                            ease-in-out">
-                                <h4 className="text-white text-3xl font-bricolage">{item.title}</h4>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </div>
-        </section>
+  <div className="gallery-grid">
+    {galleryItems.map((item, index) => (
+      <div className="gallery-card" key={index}>
+        <div className="gallery-image">
+          <Image
+            src={item.img}
+            alt={item.title}
+            fill
+            className="img-cover"
+          />
+        </div>
+
+        <div className="gallery-content">
+          <h4>{item.title}</h4>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Video Banner */}
-        <div style={{margin: "0rem", top: "2rem"}} className="relative w-full h-125 overflow-hidden">
-            <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover absolute top-0 left-0"
-            >
-                <source src="/video/video2.mp4" type="video/mp4" />
-            </video>
-
-            <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 z-10">
-            <h2 style={{fontSize: "2rem", margin: "3rem"}} className="text-5xl md:text-6xl font-bricolage font-bold text-white">
-                Ready For an Upgrade? Let's Talk
-            </h2>
-            <button style={{backgroundColor: "white", margin: "5rem", borderRadius: "0.375rem", fontSize: "1.8rem"}} className="mt-10 px-6 py-3 cursor-pointer bg-white text-black font-semibold rounded hover:bg-gray-200 
-            transition hover:translate-y-1">Contact Us</button>
-            </div>
+         {/* Hero Video */}
+      <div className="hero-video">
+        <video autoPlay loop muted playsInline className="hero-video__video">
+          <source src="/video/video2.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-video__overlay">
+          <h2 className="hero-video__title">
+            Ready For an Upgrade? Let's Talk
+          </h2>
+          <button className="hero-video__button">Contact Us</button>
         </div>
+      </div>
 
         {/* Testimonial */}
-        <section style={{marginTop: '3rem'}} className="px-[8%] lg:px-[12%] py-32 bg-white">
-            <div className="flex flex-col lg:flex-row justify-between items-center mb-12 gap-8">
-                <div className="lg:w-1/2">
-                <h1 style={{fontSize: "4rem", top: "200rem", fontWeight: "bold", margin: "4rem"}} className="text-7xl font-bricolage font-bold">Client <br/>Testimonials</h1>
-                </div>
-                <div style={{ top: "20rem", margin: "4rem", fontWeight: "bold"}} className="lg:w2/5">
-                <h3  style={{fontSize: "1.5rem", margin: "1rem"}}className="text-xl font-semibold mb-2">
-                    Testimonials
-                </h3>
-                <p style={{fontSize: "1rem", margin: "1rem"}} className="text-gray-600">
-                    Hear what our satisfied clients have to say about our exceptional sofa design services and how we've transformed their living spaces,
-                    enhancing both comfort and style, creating homes they truly love one sofa at a time.
-                </p>
-                </div>
-            </div>
+        {/* TESTIMONIALS SECTION */}
+<section className="testimonials-section">
+  <div className="testimonials-header">
+    <h2>Client Testimonials</h2>
+    <p>Hear what our satisfied clients have to say about our custom sofa designs.</p>
+  </div>
 
-            <Swiper style={{margin: "0rem", top: "2rem", fontSize: "1.5rem", alignItems: "center", justifyContent: "center"}} spaceBetween={30} slidesPerView={3} loop={true} className='w-full'>
-                {testimonials.map((testimonial , index) => (
-                    <SwiperSlide key={index} style={{backgroundColor: "gray-100", padding: "2rem", borderRadius: "0.5rem", boxShadow: "0 2px 4px rgba(0,0,0,0.1)", transition: "box-shadow 0.3s ease-in-out"}} className="bg-gray-100 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
-                        <img src="/quote.svg" alt='quote' className='w-10 h-10 object-contain mb-4 opacity-25'/>
-                        <p className="text-gray-700 mb-6">{testimonial.quote}</p>
-                        <div className="flex items-center">
-                            <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 object-cover rounded-full" />
-                            <div className="ml-4">
-                                <h2 className="font-semibold text-lg">{testimonial.name}</h2>
-                                <p className="text-sm text-gray-500">{testimonial.location}</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </section>
+  <div className="testimonials-grid">
+    {testimonials.map((t, index) => (
+      <div className="testimonial-card" key={index}>
+        <img src={t.image || "/default-user.jpg"} alt={t.name} className="testimonial-avatar" />
+        <p className="testimonial-quote">"{t.quote}"</p>
+        <h4 className="testimonial-name">{t.name}</h4>
+        <span className="testimonial-location">{t.location}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Social Images */}
-        <section style={{marginBottom: "5rem"}} className='py-32 bg-white min-h-[50vh]'>
-        <div className="w-full h-125">
-            <Swiper modules={[Autoplay]} spaceBetween={0} slidesPerView={2} loop={true}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }} className='w-full h-full'>
-                {socialImages.map((src , index) => (
-                    <SwiperSlide key={index}>
-                        <div className="w-full h-full">
-                            <img src={src} alt={`Social Image ${index + 1}`} style={{margin: "4rem"}} className="w-full h-full object-cover" />
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
-        </section>
+        {/* SOCIAL MEDIA SECTION */}
+<section className="social-section">
+  <div className="social-header">
+    <h2>Connect With Us</h2>
+    <p>Follow us on social media for latest designs and updates</p>
+  </div>
+
+  <div className="social-links">
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <img src="/icons/instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+      <img src="/icons/facebook.png" alt="Facebook" />
+    </a>
+    <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+      <img src="/icons/whatsapp.png" alt="WhatsApp" />
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <img src="/icons/twitter.png" alt="Twitter" />
+    </a>
+  </div>
+
+  <div className="social-marquee">
+    <div className="marquee-track">
+      <img src="/showcase1.jpg" alt="sofa1" />
+      <img src="/showcase2.jpg" alt="sofa2" />
+      <img src="/showcase3.jpg" alt="sofa3" />
+      <img src="/showcase4.jpg" alt="sofa4" />
+    </div>
+  </div>
+</section>
+
     </>
   );
 }
