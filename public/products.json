@@ -17,56 +17,371 @@
         "id": 3,
         "name": "Sectional Sofa",
         "price": 899.99,
-        "image": "/image/sofa3.jpg",
+        "image": "/image/interior3.jpeg",
         "description": "A spacious sectional sofa perfect for large living rooms and gatherings."
     },
     {
         "id": 4,
         "name": "Recliner Sofa",
         "price": 799.99,
-        "image": "/image/sofa4.jpg",
+        "image": "/image/interior4.jpg",
         "description": "A comfortable recliner sofa with adjustable seating for ultimate relaxation."
     },
     {
         "id": 5,
         "name": "Sleeper Sofa",
         "price": 599.99,
-        "image": "/image/sofa5.jpg",
+        "image": "/image/interior5.jpg",
         "description": "A versatile sleeper sofa that easily converts into a bed for guests."
     },
     {
         "id": 6,
         "name": "Loveseat Sofa",
         "price": 399.99,
-        "image": "/image/sofa6.jpg",
+        "image": "/image/interior6.jpg",
         "description": "A cozy loveseat sofa perfect for small spaces and intimate settings."
     },
     {
         "id": 7,
         "name": "Chesterfield Sofa",
         "price": 999.99,
-        "image": "/image/sofa7.jpg",
+        "image": "/image/interior7.jpg",
         "description": "A luxurious Chesterfield sofa with deep button tufting and rolled arms."
     },
     {
         "id": 8,
         "name": "Mid-Century Modern Sofa",
         "price": 549.99,
-        "image": "/image/sofa8.jpg",
+        "image": "/image/interior8.jpg",
         "description": "A stylish mid-century modern sofa with tapered legs and vibrant upholstery."
     },
     {
         "id": 9,
         "name": "Convertible Sofa",
         "price": 649.99,
-        "image": "/image/sofa9.jpg",
+        "image": "/image/interior9.jpg",
         "description": "A functional convertible sofa that can be adjusted for different seating arrangements."
     },
     {
         "id": 10,
         "name": "Outdoor Sofa",
         "price": 749.99,
-        "image": "/image/sofa10.jpg",
+        "image": "/image/interior10.jpg",
         "description": "A durable outdoor sofa designed to withstand the elements while providing comfort."
+    },
+    {
+        "id": 11,
+        "name": "Honey combe",
+        "price": 800.99,
+        "image": "/image/interior11.jpg",
+        "description":"A comfortable recliner sofa with adjustable seating for ultimate relaxation."
+    },
+    {
+        "id": 12,
+        "name": "Neon Horizon",
+        "price": 800.99,
+        "image": "/image/interior12.jpg",
+        "description":"This sofa is a direct homage to Snythwave and Cyberpunk aesthetics. It trades organic curves for a more structured, cantilevered look."
+    },
+    {
+        "id": 13,
+        "name": "Pulse",
+        "price": 800.99,
+        "image": "/image/interior13.jpg",
+        "description":"This design focuses on texture and rhythm. The body of the sofa is divided into vertical, pillowy segments, giving it an undulating, cloud-like appearance."
+    },
+    {
+        "id": 14,
+        "name": "Orbit",
+        "price": 800.99,
+        "image": "/image/interior14.jpg",
+        "description":"A bold, experimental piece that leans into Googie architecture. The sofa features a continuous, sweeping white outer shell that terminates in a dramatic, floor-level tail."
+    },
+    {
+        "id": 15,
+        "name": "Galactic Regency",
+        "price": 800.99,
+        "image": "/image/interior15.jpg",
+        "description":"This formal set features a tri-tone palette of bone white, charcoal, and polished gold."
+    },
+    {
+        "id": 16,
+        "name": "Orbit Asymmetrical Sectional",
+        "price": 1250.00,
+        "image": "/image/interior13.jpg",
+        "description": "A bold Googie-style sofa with a sweeping white outer shell and vibrant tangerine and teal accents."
+    },
+    {
+        "id": 17,
+        "name": "Pulse Sculptural Sofa",
+        "price": 950.50,
+        "image": "/image/interior12.jpg",
+        "description": "Features undulating vertical segments in cloud-white with bright orange pop-art side cut-outs."
+    },
+    {
+        "id": 18,
+        "name": "Neon Horizon Streamliner",
+        "price": 1100.00,
+        "image": "/image/interior14.jpg",
+        "description": "A synthwave-inspired sofa with a cantilevered frame and integrated red-to-yellow gradient panels."
+    },
+    {
+        "id": 19,
+        "name": "Nebula Pod Chair",
+        "price": 540.00,
+        "image": "/image/nebula_pod.jpg",
+        "description": "A high-gloss fiberglass swivel chair with a recessed deep-blue velvet interior."
+    },
+    {
+        "id": 20,
+        "name": "Stardust Coffee Table",
+        "price": 425.99,
+        "image": "/image/stardust_table.jpg",
+        "description": "A kidney-shaped smoked glass table supported by tapered, polished chrome orbital legs."
+    },
+    {
+        "id": 21,
+        "name": "Solaris Lounge Set",
+        "price": 1800.00,
+        "image": "/image/solaris_lounge.jpg",
+        "description": "Modular seating system featuring liquid-motion curves and silver metallic upholstery."
+    },
+    {
+        "id": 22,
+        "name": "Lunar Pedestal Table",
+        "price": 315.00,
+        "image": "/image/lunar_side.jpg",
+        "description": "An hourglass-shaped side table made of matte white polymer with a gold-leaf top inlay."
+    },
+    {
+        "id": 23,
+        "name": "Event Horizon Console",
+        "price": 890.00,
+        "image": "/image/event_horizon.jpg",
+        "description": "A floating media unit with rounded corners and sliding doors in perforated aluminum."
+    },
+    {
+        "id": 24,
+        "name": "Cosmos Ottoman Set",
+        "price": 250.00,
+        "image": "/image/cosmos_ottoman.jpg",
+        "description": "A set of three pebble-shaped stools in graduated shades of neon violet and ash."
+    },
+    {
+        "id": 25,
+        "name": "Zero-G Bed Frame",
+        "price": 2100.00,
+        "image": "/image/zero_g_bed.jpg",
+        "description": "A levitating bed design with a wrap-around padded headboard and under-glow LED lighting."
+    },
+    {
+        "id": 26,
+        "name": "Pulsar Nightstand",
+        "price": 280.50,
+        "image": "/image/pulsar_night.jpg",
+        "description": "Spherical bedside unit featuring a touch-to-open drawer and wireless charging top."
+    },
+    {
+        "id": 27,
+        "name": "Infinity Wall Shelf",
+        "price": 195.00,
+        "image": "/image/infinity_shelf.jpg",
+        "description": "A modular S-shaped shelving unit made of translucent neon-amber acrylic."
+    },
+    {
+        "id": 28,
+        "name": "Photon Floor Lamp",
+        "price": 460.00,
+        "image": "/image/photon_lamp.jpg",
+        "description": "A slender triple-headed arc lamp with chrome shades and a heavy marble base."
+    },
+    {
+        "id": 29,
+        "name": "Supernova Dining Table",
+        "price": 1550.00,
+        "image": "/image/supernova_table.jpg",
+        "description": "Circular white marble table with a central starburst pedestal in brushed brass."
+    },
+    {
+        "id": 30,
+        "name": "Astro Vanity Mirror",
+        "price": 320.00,
+        "image": "/image/astro_mirror.jpg",
+        "description": "Irregular oval mirror with a deep-set frame containing color-changing smart LEDs."
+    },
+    {
+        "id": 31,
+        "name": "Titanium Wave Bench",
+        "price": 680.00,
+        "image": "/image/titanium_wave.jpg",
+        "description": "A seamless, liquid-metal style bench made from polished aluminum with a high-gloss finish."
+    },
+    {
+        "id": 32,
+        "name": "Aura Smart Mirror",
+        "price": 415.50,
+        "image": "/image/aura_mirror.jpg",
+        "description": "A full-length frameless mirror with voice-activated perimeter lighting and a hidden digital clock."
+    },
+    {
+        "id": 33,
+        "name": "Cyber-Knot Accent Chair",
+        "price": 590.00,
+        "image": "/image/cyber_knot.jpg",
+        "description": "A complex, 3D-printed lattice structure seat in matte neon green with a black carbon-fiber base."
+    },
+    {
+        "id": 34,
+        "name": "Vortex Dining Table",
+        "price": 1950.00,
+        "image": "/image/vortex_table.jpg",
+        "description": "Features a swirling black resin top with embedded gold leaf 'galaxies' and a heavy chrome pedestal."
+    },
+    {
+        "id": 35,
+        "name": "Glitch-Pattern Rug",
+        "price": 310.00,
+        "image": "/image/glitch_rug.jpg",
+        "description": "A low-pile silk rug with a pixelated digital distortion pattern in shades of cobalt and charcoal."
+    },
+    {
+        "id": 36,
+        "name": "Ion Bar Stool",
+        "price": 245.00,
+        "image": "/image/ion_stool.jpg",
+        "description": "Transparent acrylic seat with a single-stemmed base finished in a 'chameleon' iridescent coat."
+    },
+    {
+        "id": 37,
+        "name": "Hyper-Sleep Bedside Lamp",
+        "price": 125.99,
+        "image": "/image/sleep_lamp.jpg",
+        "description": "A minimalist white dome lamp that uses red-spectrum light to promote natural sleep cycles."
+    },
+    {
+        "id": 38,
+        "name": "Synapse Home Office Desk",
+        "price": 1150.00,
+        "image": "/image/synapse_desk.jpg",
+        "description": "A streamlined workstation with an integrated touch-panel surface and built-in cable management conduits."
+    },
+    {
+        "id": 39,
+        "name": "Gravity-Defy Bookshelf",
+        "price": 720.00,
+        "image": "/image/gravity_shelf.jpg",
+        "description": "A wall-mounted unit with hidden brackets that makes books appear to float against the wall."
+    },
+    {
+        "id": 40,
+        "name": "Plasma Accent Pillow Set",
+        "price": 85.00,
+        "image": "/image/plasma_pillows.jpg",
+        "description": "Four cushions made of heat-sensitive 'mood' fabric that changes color when touched."
+    },
+    {
+        "id": 41,
+        "name": "Vector Armchair",
+        "price": 780.00,
+        "image": "/image/vector_chair.jpg",
+        "description": "Sharp, geometric lounge chair with a steel frame and electric-blue leather padding."
+    },
+    {
+        "id": 42,
+        "name": "Neutrino Coffee Station",
+        "price": 540.00,
+        "image": "/image/neutrino_coffee.jpg",
+        "description": "Compact matte-black island with a waterfall edge and built-in pods for smart-appliances."
+    },
+    {
+        "id": 43,
+        "name": "Prism Pendant Light",
+        "price": 360.00,
+        "image": "/image/prism_pendant.jpg",
+        "description": "Dichroic glass pyramid that casts rainbow-colored shadows across the room."
+    },
+    {
+        "id": 44,
+        "name": "Obsidian Sofa Bed",
+        "price": 1390.00,
+        "image": "/image/obsidian_sofa.jpg",
+        "description": "Convertible sleeper in black faux-ostrich leather with high-density memory foam cushions."
+    },
+    {
+        "id": 45,
+        "name": "Zenith Wall Clock",
+        "price": 180.00,
+        "image": "/image/zenith_clock.jpg",
+        "description": "A floating magnetic sphere that orbits the center plate to tell time without traditional hands."
+    },
+    {
+        "id": 46,
+        "name": "Data-Flow Room Divider",
+        "price": 499.00,
+        "image": "/image/data_divider.jpg",
+        "description": "A semi-transparent mesh screen with programmable fiber-optic wires woven into the fabric."
+    },
+    {
+        "id": 47,
+        "name": "Apex Gaming Throne",
+        "price": 1050.00,
+        "image": "/image/apex_throne.jpg",
+        "description": "Ergonomic chair with haptic feedback vibrations and built-in 5.1 surround sound headrest."
+    },
+    {
+        "id": 48,
+        "name": "Cryo-Glass Display Cabinet",
+        "price": 980.00,
+        "image": "/image/cryo_cabinet.jpg",
+        "description": "Frost-tinted glass case with internal temperature control for wine or high-end collectibles."
+    },
+    {
+        "id": 49,
+        "name": "Binary Nesting Tables",
+        "price": 340.00,
+        "image": "/image/binary_tables.jpg",
+        "description": "A set of two circular metal tables that fit perfectly into each other, featuring circuit-board etchings."
+    },
+    {
+        "id": 50,
+        "name": "Velociti Coat Rack",
+        "price": 210.00,
+        "image": "/image/velociti_rack.jpg",
+        "description": "A single piece of bent orange neon-coated steel that functions as a sculptural coat hanger."
+    },
+    {
+        "id": 51,
+        "name": "Nova Vanity Set",
+        "price": 1200.00,
+        "image": "/image/nova_vanity.jpg",
+        "description": "A glossy white desk with a flip-top mirror and rose-gold metallic interior compartments."
+    },
+    {
+        "id": 52,
+        "name": "Quasar Lounge Ottoman",
+        "price": 320.00,
+        "image": "/image/quasar_ottoman.jpg",
+        "description": "An oversized, star-shaped pouf covered in reflective silver spandex fabric."
+    },
+    {
+        "id": 53,
+        "name": "Aileron Wall Sconce",
+        "price": 190.00,
+        "image": "/image/aileron_sconce.jpg",
+        "description": "Sleek aerodynamic wing-shaped light that washes the wall in a soft purple glow."
+    },
+    {
+        "id": 54,
+        "name": "Mach-1 Dining Chair",
+        "price": 375.00,
+        "image": "/image/mach_chair.jpg",
+        "description": "Lightweight carbon-fiber frame with a minimal seat and high-back support."
+    },
+    {
+        "id": 55,
+        "name": "Fusion Hearth",
+        "price": 2500.00,
+        "image": "/image/fusion_hearth.jpg",
+        "description": "A ventless bio-ethanol fireplace housed in a sphere of heat-resistant glass and black steel."
     }
 ]
