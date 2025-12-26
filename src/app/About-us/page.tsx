@@ -1,4 +1,6 @@
 import Image from "next/image";
+import "./about.css";
+
 
 export default function Page() {
 
@@ -79,17 +81,8 @@ const galleryItems = [
   return (
     
       <>
-      <div className="relative h-[60vh] overflow-hidden flex items-center justify-center">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                >
-
-                    <source src='/video/video2.mp4' type="video/mp4" />
-                </video>
+      <div className="relative h-[150vh] overflow-hidden flex items-center justify-center">
+                <img src="image/F.jpg" alt="" className="absolute inset-0 w-full h-full object-cover"/>
                 <div className='absolute top-0 left-0 w-full h-full bg-black/70 z-10'></div>
                 <h1 style={{fontFamily: "bricolage", fontSize: "5rem", fontWeight: "bold"}} className="text-white text-[3rem] md:text-[5rem] font-bricolage z-20">
                     About Us    
@@ -227,7 +220,7 @@ const galleryItems = [
         </section>
 
         {/* Gallery */}
-                <section style={{backgroundColor: "#f8f8f8", display: "flex", justifyContent: "center", alignItems: "center"}} className="px-[8%] lg:px-[12%] py-16">
+                <section style={{backgroundColor: "#f8f8f8", display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "10vh"}} className="px-[8%] lg:px-[12%] py-16">
                     <div className="container mx-auto px-4">
                         <h1 style={{fontFamily: "bricolage", fontSize: "5rem", margin: "2rem", fontWeight: "bold"}} className="text-8xl font-bricolage font-bold mb-10">Gallery</h1>
                         <div style={{display: "grid", fontSize: "1.2rem", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem", borderRadius: "0.5rem"}} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

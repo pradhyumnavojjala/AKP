@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-cards'; 
 import Image from 'next/image'; 
 import Link from 'next/link';
+import './home.css';
 import { useState } from 'react';
 import SofaData from './JsonData/sofa.json';
 import { it } from 'node:test';

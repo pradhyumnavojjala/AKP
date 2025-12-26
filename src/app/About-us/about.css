@@ -1,0 +1,86 @@
+/* ========== GLOBAL ========== */
+.about-title {
+  font-family: bricolage;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.about-text {
+  font-family: bricolage;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151;
+  max-width: 600px;
+}
+
+/* ========== VISION SECTION ========== */
+.vision-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .vision-content {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* iPad */
+@media (max-width: 1024px) {
+  .vision-content {
+    padding: 0 2rem;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .vision-content {
+    padding: 0 1rem;
+  }
+}
+
+/* ========== DESIGN PROCESS ========== */
+.process-title {
+  font-family: bricolage;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: bold;
+}
+
+.process-card img {
+  width: 70px;
+  height: 70px;
+}
+
+/* Center items on small screens */
+@media (max-width: 768px) {
+  .process-card {
+    text-align: center;
+  }
+}
+
+/* ========== GALLERY ========== */
+.gallery-title {
+  font-family: bricolage;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: bold;
+}
+
+/* Fix image height on mobile */
+@media (max-width: 640px) {
+  .gallery-item {
+    height: 220px;
+  }
+}
+
+/* ========== VIDEO HERO TEXT ========== */
+.hero-title {
+  font-family: bricolage;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: bold;
+  text-align: center;
+}
