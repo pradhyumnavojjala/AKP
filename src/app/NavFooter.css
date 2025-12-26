@@ -232,6 +232,7 @@
   /* Navbar */
   .navbar__container {
     padding: 1rem 2rem; /* reduce side padding for smaller screens */
+    height: 10rem;
   }
 
   .navbar__links,
