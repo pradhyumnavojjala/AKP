@@ -225,3 +225,126 @@
   font-size: 1rem;
   margin-top: 2rem;
 }
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  .navbar__container {
+    padding: 1rem 2rem; /* reduce side padding for smaller screens */
+  }
+
+  .navbar__links,
+  .navbar__social-cta {
+    display: none; /* hide desktop links */
+  }
+
+  .navbar__menu-btn {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+
+  .navbar__mobile {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 49;
+  }
+
+  .navbar__mobile.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .navbar__mobile ul li a {
+    color: black;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 4rem 5%;
+  }
+
+  .footer__container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer__contacts {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer__right {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer__left h2 {
+    font-size: 2rem;
+  }
+
+  .footer__left p {
+    font-size: 1.2rem;
+  }
+
+  .footer__right h3,
+  .footer__right h4 {
+    font-size: 1.2rem;
+  }
+
+  .footer__bottom {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (mobiles) */
+@media (max-width: 600px) {
+
+  .navbar__container {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar__cta {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 3rem 3%;
+  }
+
+  .footer__left h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer__left p {
+    font-size: 1rem;
+  }
+
+  .footer__right h3,
+  .footer__right h4 {
+    font-size: 1rem;
+  }
+
+  .footer__contacts {
+    gap: 0.8rem;
+  }
+
+  .footer__right {
+    gap: 1rem;
+  }
+}
