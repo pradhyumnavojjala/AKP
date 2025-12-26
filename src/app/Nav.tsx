@@ -34,7 +34,7 @@ export default function Nav() {
                 
                 {/* Logo */}
                 <Link href="/" className={`text-4xl lg:text-5xl font-bold font-bricolage transition-colors duration-300 ${isSticky ? 'text-black' : 'text-white'}`}>
-                    AKP<span className="text-orange-500"> Homes & Furnitures</span>
+                    AKP<span style={{fontSize: "2rem"}} className="text-orange-500"> Homes & Furnitures</span>
                 </Link>
 
                 {/* Desktop Nav Links */}
